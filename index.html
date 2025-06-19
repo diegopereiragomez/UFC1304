@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de aplicacion</title>
+    <link rel="icon" href="./img/favicon.svg" />
+    <link rel="stylesheet" href="./estilos/normalize.css" />
+    <link rel="stylesheet" href="./estilos/estilo.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Envia tu solicitud</h1>
+    </header>
+    <main>
+        <form action="#" class="formulario" method="post" id="formularioAplicacion">
+            <!-- Datos personales -->
+            <fieldset class="zona" id="zona1">
+                <section class="formulario__zona">
+                    <label for="nombre" class="formulario__label">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                    <label for="apellido1" class="formulario__label">Primer Apellido</label>
+                    <input type="text" id="apellido1" name="apellido1" placeholder="Primer apellido" required>
+                    <label for="apellido2" class="formulario__label">Segundo Apellido</label>
+                    <input type="text" id="apellido2" name="apellido2" placeholder="Segundo apellido" required>
+                    <label for="email" class="formulario__label"> e-mail</label>
+                    <input type="text" id="email" name="email" placeholder="e-mail" required>
+                    <label for="telefono" class="formulario__label"> Telefono</label>
+                    <input type="text" id="telefono" name="telefono" placeholder="Telefono" required>
+                    <label for="nif" class="formulario__label">NIF</label>
+                    <input type="text" id="nif" name="nif" placeholder="nif o pasaporte" required>
+                    <div class="formulario__zona--button">
+                        <button type="button" class="next" onclick="nextStep()">
+                            Siguiente
+                        </button>
+                    </div>
+                </section>
+            </fieldset>
+            <!-- Datos profesionales -->
+            <fieldset class="zona" id="zona2" hidden>
+                <section class="formulario__zona">
+                    <label for="profesion" class="formulario__zona--label">Indique el area profesional</label>
+                    <select name="profesion" id="profesion" required>
+                        <option value="">Elija una opcion</option>
+                        <option value="ingeniero">Ingeniero</option>
+                        <option value="programador">Programador</option>
+                        <option value="economista">Economista</option>
+                        <option value="electricista">Electricista</option>
+                    </select>
+                    <label for="salario" class="formulario__zona--label">Indique el rango salarial</label>
+                    <div class="formulario__salario">
+                        <div class="formulario__salario--campo">
+
+                            <input type="radio" name="salario" id="bajo" value="1000-1300€" checked>
+                            <label for="">1000-1300€</label>
+                        </div>
+                        <div class="formulario__salario--campo">
+
+                            <input type="radio" name="salario" id="medio" value="1301-2000€">
+                            <label for="">1301-2000€</label>
+                        </div>
+                        <div class="formulario__salario--campo">
+
+                            <input type="radio" name="salario" id="alto" value="2001-4000€">
+                            <label for="">2001-4000€</label>
+                        </div>
+                        <div class="formulario__salario--campo">
+
+                            <input type="radio" name="salario" id="maximo" value=">4001€">
+                            <label for="">Mas de 40001€</label>
+                        </div>
+                    </div>
+                    <label for="movilidad" class="formulario__zona--label">Indique su disponibilidad geografica</label>
+                    <div class="formulario__movilidad">
+                        <div class="formulario__movilidad--campo">
+                            <label for="">Ciudad de residencia y area de influencia</label>
+                            <input type="checkbox" name="movilidad" id="local" value="ciudad">
+                        </div>
+                        <div class="formulario__movilidad--campo">
+                            <label for="">Dentro de la propia provincia</label>
+                            <input type="checkbox" name="movilidad" id="provincial" value="provincia">
+                        </div>
+                        <div class="formulario__movilidad--campo">
+                            <label for="">Dentro de la comunidad autonoma</label>
+                            <input type="checkbox" name="movilidad" id="autonomica" value="comunidad">
+                        </div>
+                        <div class="formulario__movilidad--campo">
+                            <label for="">Cualquier parte del pais</label>
+                            <input type="checkbox" name="movilidad" id="nacional" value="nacion">
+                        </div>
+                        <div class="formulario__movilidad--campo">
+                            <label for="">Cualquier lugar del mundo</label>
+                            <input type="checkbox" name="movilidad" id="internacional" value="internacional">
+                        </div>
+                    </div>
+                    <div class="formulario__zona--button">
+                        <button type="button" class="previous" onclick="previousStep()">
+                            Anterior
+                        </button>
+                        <button type="button" class="next" onclick="nextStep()">
+                            Siguiente
+                        </button>
+                    </div>
+                </section>
+            </fieldset>
+            <!-- Autopresentacion breve y boton de envio -->
+            <fieldset class="zona" id="zona3" hidden>
+                <section class="formulario__zona">
+                    <label for="presentacion" class="formulario__zona--label">Breve presentacion personal</label>
+                    <textarea name="" id="" cols="30" rows="10" required
+                        placeholder="Introduccion personal..."></textarea>
+                    <div class="formulario__zona--button">
+                        <button type="button" class="previous" onclick="previousStep()">
+                            Anterior
+                        </button>
+                        <button type="button" class="next" onclick="nextStep()">
+                            Siguiente
+                        </button>
+
+                    </div>
+                </section>
+            </fieldset>
+            <!-- boton de envio -->
+            <fieldset class="zona" id="zona4" hidden>
+                <section class="formulario__zona">
+
+                    <div>
+                        <p>Revisa los datos antes de enviar</p>
+                    </div>
+
+                    <div class="formulario__zona--button">
+                        <button type="submit">Enviar</button>
+                    </div>
+                </section>
+            </fieldset>
+            <div id="errorMessages"></div>
+        </form>
+    </main>
+    <footer>
+        <small>Todos los derechos reservados <a href="#">Diego<sup>&copy;</sup>Quest</a> 🐺</small>
+    </footer>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

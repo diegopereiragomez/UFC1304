@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    --black: #000;
+    --white: #fff;
+    --primary-color: #b7edfd;
+    --secundary-color: #ffd079;
+    --bg-color: #1867fc;
+    --error: hsl(0, 100%, 50%);
+    --transition: 0.3s;
+    --gap: 5px;
+    --border-color: #8d8d8d;
+
+}
+
+body {
+    background-color: var(--bgcolor);
+    font-family: var(--font-family);
+    background-image: linear-gradient(180deg, #f7f0f0fd 0%, #fffdfd45 100%), url("../img/bg.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    text-align: center;
+    background-color: var(--bg-color);
+    color: var(--white);
+    text-decoration: none;
+}
+
+footer a {
+    color: var(--white);
+}
+
+button {
+    width: 100px;
+    height: 25px;
+    border-radius: var(--gap);
+    color: var(--black);
+    background-color: var(--secundary-color);
+}
+
+header {
+    background-color: var(--bg-color);
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+}
+
+input {
+    background-color: var(--primary-color);
+}
+
+form {
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    backdrop-filter: blur(14px);
+}
+
+.formulario__zona {
+    max-width: 60wh;
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--gap);
+    border-radius: var(--gap);
+    line-height: 1.2rem;
+    color: var(--black);
+    gap: var(--gap);
+    padding: 2px;
+
+}
+
+.formulario__label {
+    font-weight: 600;
+}
+
+.formulario__salario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap);
+    margin: 10px 0;
+}
+
+.formulario__movilidad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap);
+    margin: var(--gap) 0;
+}
+
+.formulario__movilidad--campo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    gap: var(--gap);
+}
+
+.formulario__salario--campo {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 10px;
+    gap: var(--gap);
+}
+
+.formulario__zona--label {
+    font-weight: 600;
+}
+
+#errorMessages {
+    color: var(--error);
+}
+
+#zona1 .formulario__zona--button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#zona2 .formulario__zona--button {
+    display: flex;
+    justify-content: space-between;
+}
+
+#zona3 .formulario__zona--button {
+    display: flex;
+    justify-content: space-between;
+}
+
+#zona4 .formulario__zona--button {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width:400px) {
+    body {
+        background-image: none;
+        background-color: var(--primary-color);
+        font-family: var(--font-family);
+    }
+
+    form {
+        border: 2px solid var(--border-color);
+        border-radius: 5px;
+        backdrop-filter: none;
+    }
+}
